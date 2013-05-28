@@ -1,0 +1,133 @@
+
+ $(document).ready(function(){
+ $("#password_mismatched").hide();
+ $("#invalid_information").hide();	
+ $("#register_div").hide();	
+ $("#user_greeting").hide();
+ $("#log_in_div").hide();
+ $(".tabContent").hide(); 
+$(".tabContent:first").show();
+$("#tabs ul li a").click(function(){ //Fire the click event
+  var activeTab = $(this).attr("href"); // Catch the click link
+ $(".BodyContent ul li a").removeClass("active"); // Remove pre-highlighted link
+ $(this).addClass("active"); // set clicked link to highlight state
+ $(".tabContent").hide(); // hide currently visible tab content div
+ $(activeTab).fadeIn(); // show the target tab content div by matching clicked link.
+});
+$("#log_in").click(function(){
+	$('#log_in_div').dialog({
+		show:"puff",
+		hide:"explode",
+		heigth: 200,
+		width: 350,
+		dragable: false,
+		resizable: false,
+        modal: true,
+        buttons:{
+        	"Cancel":function(){
+        		$(this).dialog("close");
+        	}
+        }
+	
+	})
+});
+
+$("#register").click(function(){
+	$('#register_div').dialog({
+		show:"puff",
+		hide:"explode",
+		heigth: 500,
+		width: 500,
+		dragable: false,
+		resizable: false,
+        modal: true,
+        buttons: {
+
+				"Close": function(){
+				$(this).dialog("close");
+				}
+			}
+	
+	});
+});
+   function hang_outs(){
+	 ajax({
+	
+					type:"POST",
+					url: "validations/view.php",
+					data:{data:JSON.stringify($("").serializeArray())},
+					data: function(){
+						$("#hang-outViewer").append(data);
+						alert(data);
+					
+					},
+					error: function(data){
+						alert('Opz');				
+					}
+
+				});
+	$("#submit_button").click(function(){
+		
+		var name = $("#firstname").val();
+		var lastname = $("#lastname").val();
+		var address = $("#address").val();
+		var contact = $("#contact_info").val();
+		var email = $("#email").val();
+		var username = $("#username").val();
+		var password = $("#password").val();
+		var retype_password = $("#retype_password").val();
+		
+		var string_pattern = /^[A-Z, a-z]*$/;
+		var integer_pattern = /^[0-9]*$/;
+		
+		var firstname_valid = string_pattern.test(firstname);
+		var address_valid = string_pattern.test(address);
+		var lastname_valid = string_pattern.test(lastname);
+		var contact_valid = integer_pattern.test(contact);
+	
+		if(firstname != "" && firstname_valid  && lastname != "" && lastname_valid && contact != "" && contact_valid && address != "" && address_valid && password != "" && retyped_password != ""){
+			if(password == retyped_password) {
+				$.ajax({
+					type: "POST",
+					url: "validations/add_user.php",
+					data: {data: JSON.stringify($("#registration_form").serializeArray())},
+					success: function(data){
+						$("#register_div").dialog("close");
+						//$("#user_greeting").show();
+						$("#registered_user_span").html($("input[name = 'username']").val());
+						$("#registration_finished").dialog({
+							show: "puff",
+							hide: "explode",
+							height: 250,
+							width: 550,
+							modal: true,
+							buttons: {
+								"OKAY": function(){
+									$(this).dialog("close");
+								}
+							}
+
+						});
+					},
+					error: function(data) {
+						alert("error in adding user! = " + data);
+					}
+				});
+			}else{
+				$("#password_mismatched").fadeIn(200);
+				$("#password_mismatched").fadeOut(5000);
+			}
+		}else {
+			$("#invalid_information").fadeIn(200);
+			$("#invalid_information").fadeOut(5000);
+		}
+	});
+	
+	}
+
+
+   
+   
+    
+
+});
