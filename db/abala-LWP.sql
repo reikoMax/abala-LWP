@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 22, 2013 at 04:38 AM
+-- Generation Time: May 29, 2013 at 01:19 AM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -16,7 +16,7 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `abala_LWP`
+-- Database: `abala-LWP`
 --
 
 -- --------------------------------------------------------
@@ -30,19 +30,21 @@ CREATE TABLE IF NOT EXISTS `events_tbl` (
   `events_name` varchar(50) NOT NULL,
   `organizer` varchar(50) NOT NULL,
   `invited_people` varchar(50) NOT NULL,
-  `events_date` date NOT NULL,
+  `events_date` datetime NOT NULL,
   `events_held` varchar(50) NOT NULL,
   `date_entered` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`events_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `events_tbl`
 --
 
 INSERT INTO `events_tbl` (`events_id`, `events_name`, `organizer`, `invited_people`, `events_date`, `events_held`, `date_entered`) VALUES
-(3, '2013 summer bash', 'siege', 'all allumni in alang-alang', '2013-05-30', 'leyte ', '2013-05-22 00:00:00'),
-(4, 'Summer Camp', 'Rei', 'all children', '2013-05-27', 'At alang-alang leyte', '2013-05-22 09:45:33');
+(3, '2013 summer bash', 'siege', 'all allumni in alang-alang', '2013-05-30 00:00:00', 'leyte ', '2013-05-22 00:00:00'),
+(4, 'Summer Camp', 'Rei', 'all children', '2013-05-27 00:00:00', 'At alang-alang leyte', '2013-05-22 09:45:33'),
+(5, 'Enrollment ', 'anime6url_max', 'all students in alang-alang Nat High School', '0000-00-00 00:00:00', 'alang-alang National High School', '2013-05-27 08:40:30'),
+(11, 'Enrollment', 'anime6url_max', 'all students in alang-alang Nat High School', '2013-05-27 00:00:00', 'alang-alang National High School', '2013-05-27 10:16:16');
 
 -- --------------------------------------------------------
 
@@ -68,6 +70,27 @@ INSERT INTO `fave_places` (`users_id`, `places_id`) VALUES
 (32, 75),
 (32, 76),
 (4, 77);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `invite`
+--
+
+CREATE TABLE IF NOT EXISTS `invite` (
+  `users_id` int(11) NOT NULL,
+  `events_id` int(11) NOT NULL,
+  KEY `users_id` (`users_id`),
+  KEY `events_id` (`events_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `invite`
+--
+
+INSERT INTO `invite` (`users_id`, `events_id`) VALUES
+(1, 3),
+(1, 4);
 
 -- --------------------------------------------------------
 
@@ -102,7 +125,45 @@ INSERT INTO `like_places` (`places_like`, `users_id`) VALUES
 (70, 21),
 (58, 1),
 (58, 1),
-(76, 1);
+(76, 1),
+(58, 1),
+(72, 1),
+(77, 1),
+(77, 1),
+(77, 1),
+(76, 1),
+(58, 1),
+(77, 1),
+(77, 1),
+(77, 1),
+(77, 1),
+(77, 1),
+(77, 1),
+(77, 1),
+(77, 1),
+(76, 1),
+(77, 1),
+(58, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notifications_tbl`
+--
+
+CREATE TABLE IF NOT EXISTS `notifications_tbl` (
+  `users_notified_id` int(11) NOT NULL,
+  `users_notify` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notifications_tbl`
+--
+
+INSERT INTO `notifications_tbl` (`users_notified_id`, `users_notify`) VALUES
+(1, 4),
+(1, 1),
+(1, 1);
 
 -- --------------------------------------------------------
 
@@ -175,6 +236,13 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_lastname`, `user_address`, `u
 ALTER TABLE `fave_places`
   ADD CONSTRAINT `fave_places_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fave_places_ibfk_2` FOREIGN KEY (`places_id`) REFERENCES `places_TLAIB` (`places_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `invite`
+--
+ALTER TABLE `invite`
+  ADD CONSTRAINT `invite_ibfk_1` FOREIGN KEY (`users_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `invite_ibfk_2` FOREIGN KEY (`events_id`) REFERENCES `events_tbl` (`events_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `like_places`
