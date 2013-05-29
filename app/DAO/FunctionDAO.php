@@ -4,7 +4,7 @@
  
   class FunctionDAO extends BaseDAO{
   
-  
+  /*--------------------------------index----------------------------------------------------------------*/
 	function LogInUser($username,$password){
 		
 			$this->openCon();
@@ -24,6 +24,37 @@
 				 
 				
 			$this->closeCon();
+		}
+		function add_user($firstname,$lastname,$address,$contact_info,$email,$username,$password) {
+				$this->openCon();
+				
+				$stmt = $this->con->prepare("INSERT INTO users (user_name,user_lastname,user_address,user_contact_info,user_email_address,user_username,user_password) VALUES (?,?,?,?,?,?,?)");
+				$stmt->bindParam(1, $firstname);
+				$stmt->bindParam(2, $lastname);
+				$stmt->bindParam(3, $address);
+				$stmt->bindParam(4, $contact_info);
+				$stmt->bindParam(5, $email);
+				$stmt->bindParam(6, $username);
+				$stmt->bindParam(7, $password);
+				$stmt->execute();
+				
+				$this->closeCon();
+		}
+		function view_fiesta(){
+			$this->openCon();
+			$stmt=$this->con->prepare("SELECT * from fiesta_tbl");
+			$stmt->execute();
+			$get_total_rows->fetch();
+			while($row = $stmt->fetch() ){
+					echo "<tr id=".$row[0].">";
+					echo "<td>".$row[1]."</td>";
+					echo "<td>".$row[2]."</td>";
+					echo "<td>".$row[3]."</td>";
+					echo "<td>".$row[4]."</td>";
+					echo "</tr>";
+					
+				}
+				$this->closeCon();			
 		}
 	
 		/*----------------------------------------------USERSINTERFACE-----------------------------------------*/
@@ -66,21 +97,6 @@
 		}
 		
 		
-		function add_user($firstname,$lastname,$address,$contact_info,$email,$username,$password) {
-				$this->openCon();
-				
-				$stmt = $this->con->prepare("INSERT INTO users (user_name,user_lastname,user_address,user_contact_info,user_email_address,user_username,user_password) VALUES (?,?,?,?,?,?,?)");
-				$stmt->bindParam(1, $firstname);
-				$stmt->bindParam(2, $lastname);
-				$stmt->bindParam(3, $address);
-				$stmt->bindParam(4, $contact_info);
-				$stmt->bindParam(5, $email);
-				$stmt->bindParam(6, $username);
-				$stmt->bindParam(7, $password);
-				$stmt->execute();
-				
-				$this->closeCon();
-		}
 		function add_places($places_id, $place_name,$place_location,$place_description,$place_classification,$username){
 			$this->openCon();
 			

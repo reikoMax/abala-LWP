@@ -6,7 +6,7 @@
 	 $("#register_div").hide();	
 	 $("#user_greeting").hide();
 	 $("#log_in_div").hide();
-	 $("div#date").datepicker ();
+	   view_festivals();
 
 	 /*-------------------tabs------------------------*/
 	$(".tabContent").hide(); 
@@ -93,7 +93,30 @@
 
 					});
 		}
-
+		function view_festivals(){
+		 	$.ajax({
+		 		type:"POST",
+		 		url:"view_fiesta.php",
+		 		success:function(data){
+		 			$("#fiesta_body").append(data);
+		 		},
+		 		error:function(data){
+		 			alert(data);
+		 		}
+		 	});
+		 }
+		 $("#local_events").click(function(){
+		 	 $.ajax({
+		 	 		type:"POST",
+		 	 		url:"view_events.php",
+		 	 		success:function(data){
+		 	 			$("#fiesta_body").empty().append(data);
+		 	 		},
+		 	 		error:function(data){
+		 	 			alert(data);
+		 	 		}
+		 	 });
+		 });
 		/*-------------register_add------------------------------------*/
 		$("#submit_button").on('click',function(e){
 			alert("registration finished");
@@ -118,6 +141,7 @@
 	              	}
 	              });
 	         });
+		
 	});
 
 		

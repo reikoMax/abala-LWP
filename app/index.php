@@ -44,10 +44,10 @@
 <div class="menu_tabs" id="menu_tabs">
 <div class="tabs" id="tabs">
    <ul>
-      <li class="home"><a href="#home"><span>Home</span></a></li>
-      <li class="about_us_tab"><a href="#about_us_tab"><span>About Us</span></a></li>
-      <li class="mission_tab"><a href="#maps_pics_tab"><span>Maps & Pictures</span></a></li>
-      <li class="events_tab"><a href="#events_tab"><span>Events</a></span></li>
+      <li><a href="#home"><span>Home</span></a></li>
+      <li><a href="#about_us_tab"><span>About Us</span></a></li>
+      <li><a href="#maps_pics_tab"><span>Maps & Pictures</span></a></li>
+      <li><a href="#fiesta_tab"><span>Fiesta And Events</a></span></li>
    </ul>
 </div><!--tabs-->
    </div><!--menu_tabs-->
@@ -57,7 +57,7 @@
 				<h1>LeyTe WeB PoRtAL</h1>
 				<div id="home" class="tabContent">
 				<p>
-				<img src="./img/tacloban.jpg" />  
+				<img src="./img/tacloban.jpg"  alt="tacloban City"/>  
 				<p id="introduction">
 				<b> <strong>The City of Tacloban</strong></b>(Waray: Syudad han Tacloban, Tagalog or Filipino: Lungsod ng Tacloban) is located approximately 360 miles (580 km) southeast of Manila. It is the first city in Eastern Visayas to be classified as "highly urbanized." It is the former capital of the Philippine province of Leyte, and is the largest city in terms of population[4] in Eastern Visayas. It is also the regional center of the Region VIII. Tacloban was briefly the seat of the Philippine Commonwealth Government, from 20 October 1944 to 27 February 1945.<br />
                         </p>
@@ -68,6 +68,10 @@ In an extensive survey conducted by the Asian Institute of Management Policy Cen
    <p>Tacloban was first known as Kankabatok, an allusion to the first inhabitants of the place – Kabatok. They established their dwelling in the vicinity of the present day Sto. Niño Church. Others who came later were Gumoda, Haraging and Huraw who erected their own settlements in nearby sites. Huraw’s domain is the hill where the city hall now sits. The combined settlements acquired the name Kankabatok, meaning Kabatok’s property.
 
 By the end of the 16th century, Kankabatok was under the political administration of Palo and part of the parish of Basey, Samar. It was discovered in 1770, by the Augustinian Mission, who were superseded by the Franciscans in 1813. During this period, Kankabatok was renamed to Tacloban.</p>
+	<img src="./img/welcome_to_samar.jpg" alt="Samar" id="samar" ><h2>SAMAR</h2>
+	<p>Many names (Samal, Ibabao, Tandaya) were given to Samar Island prior to the coming of the Spaniards in 1596.  The name Samar was derived from the local dialect “samad”, meaning wound or cut, which aptly describes the rough physical features of the island that is rugged and deeply dissected by streams.
+
+During the early days of Spanish occupation, Samar was under the jurisdiction of Cebu.  In 1735, Samar and Leyte were united into one province with Carigara, Leyte as the capital town and again Samar became a separate province in 1768.</p>
 
 				
 				
@@ -131,12 +135,20 @@ Around the provincial capital of Tacloban, the usual arrival point, there are a 
 					</div><!--maps_pics_tabs-->
 					
 					
-				   <div id="events_tab" class="tabContent">
-				   	<div id="date"></div>
-								
-					<div><!--events-->
-				
+				   <div id="fiesta_tab" class="tabContent">
+				   							<h2>Let'S FiEsTA</h2>
+				   						<button id="local_events" class="btn-primary">What's Going On ?</button><br />
 
+				   	<p><strong>Leyte</strong> are rich in traditions which they celebrated here are an all year round date of events here in <strong>Leyte</strong></p>
+				   		<table id="fiesta_list" class="table">
+				   			<thead>
+				   			<th>Name Of Fiesta</th>
+				   				<th>Location</th>
+				   				<th>Date(when will be held)</th>
+				   				<th></th>
+				   			</thead>
+				   		<tbody id="fiesta_body"></tbody>
+				   			</table>
 				
 			</fieldset><!--BodyContent_field-->
 			<?php 
@@ -202,8 +214,6 @@ Around the provincial capital of Tacloban, the usual arrival point, there are a 
 	</form>
 	</div>--><!--admin_div-->
    </div><!--wrapper-->
-
-<img src="img/church.jpg" alt="1" />
 
 </body>
 </html>
