@@ -74,35 +74,47 @@ By the end of the 16th century, Kankabatok was under the political administratio
 				</div>
 				  <div id="about_us_tab" class="tabContent">
 				  <p>
-				  please call us------
+								<h2>ABOUT US<h2>
+			<p>Description:  Help to promote tourism in our region .you can find  list where you can find most suggested places that you can go in our region.</p>
+		             <p>   Features:</p>
+			<p>Log-in /Registration system
+			-users who want to contribute in the system must register and log-in.
+			the user can freely add events that are happening and will happen and places that are well known in a specific place in Tacloban and Leyte.they can edit and delete the data they enter.
+			This system can be use by the user as promoting an event.
+			Thus this system can give you list that other users enter in our database.unlike the phonebook System  which the data you can see is the data you only  enter in your account.</p>
+
+						<p>Future Features:</p>
+				<p>the users can upload pictures which can be saved in the database and  can retrieve in the database.
+				The users can upload videos of the places they traveled,to share their experience.</p>
+
 				</p>
 				  </div><!--Hang_outs_tab-->
 				  
 				  
 				  <div id="maps_pics_tab" class="tabContent">
 				  	<p>
-				  		<div id="slideshow">
-				  <div id="slidesContainer">
-				    <div class="slide">
-				      <a href="#"><img src="./img/sanjuanico.jpeg"  width="800" height="300" alt="1" /></a>
-				    </div>
-				    <div class="slide">
-				      <a href="#"><img src="./img/fiesta.jpeg"  width="800" height="300" alt="2"/></a>
-				    </div>
-				    <div class="slide">
-				     <a href="#"><img src="./img/niyog.jpeg"  width="800" height="300" alt="3"/></a>
-				    </div>
-				    <div class="slide">
-				      <a href="#"><img src="./img/sea.jpeg"  width="800" height="300" alt="4"/></a>
-				    </div>
-				     <div class="slide">
-				      <a href="#"><img src="./img/seashore.jpg"  width="800" height="300" alt="4"/></a>
-				    </div>
-				     <div class="slide">
-				      <a href="#"><img src="./img/santo nino.jpeg"  width="800" height="300" alt="4"/></a>
-				    </div>
-				</div><!--slidesContainer-->
-				</div><br /><br />
+				  		<h2><strong>The Twin Islands Of The Pacific</strong></h2>
+				  		<p>Both provinces have great history but there’s very few written about it online.
+
+John and I was given the chance to see both during our Philippine Road Trip. Yes, we did this on our own, with John driving. Of course, we slept in hotels at nights and start again after breakfast. Never have we felt unsafe on the road despite the fact that the place had a lot of undeveloped area. Honestly, that’s what gave Samar and Leyte its mystique. Their untouched beauty.
+
+I saw beautiful sea and mountain landscapes that makes the Philippines a great place for a vacation, specially if one’s purpose is to enjoy nature at its best.
+
+More than that, both provinces like I said have rich history. In fact, artifacts like ceramics, gold jewelries, large earthware jars have been found there. It is believed to be coming from traders in Siam , Vietnam and China which dates back to as far as the 13th century.</p>
+				<div id="slideshow">
+
+					<ul class="slides">
+				    	<li><img src="./img/sanjuanico.jpeg" width="620" height="320" alt="Marsa Alam underawter close up" /></li>
+				        <li><img src="./img/fiesta.jpeg" width="620" height="320" alt="Turrimetta Beach - Dawn" /></li>
+				        <li><img src="./img/niyog.jpeg" width="620" height="320" alt="Power Station" /></li>
+				        <li><img src="./img/santo nino.jpeg" width="620" height="320" alt="Colors of Nature" /></li>
+				        <li><img src="./img/sea.jpeg" width="620" height="320" alt="Sea of Leyte" /></li>
+				        <li><img src="./img/seashore.jpg" width="620" height="320" alt="Leyte's Seashore" /></li>
+				    </ul>
+
+				    <span class="arrow previous"></span>
+				    <span class="arrow next"></span>
+				</div>
 				<div id="introduction">
 					<h2>Leyte</h2>
 					<p>The east Visayan island of Leyte (“LAY-tay”), separated from Samar to the north by a mere slither of ocean, the San Juanico Strait, is another sizeable chunk of the Philippines that has a great deal to offer visitors but is often overlooked. You could spend months on this island and still only scratch the surface: the coastline is immense, the interior rugged and there are lakes and mountains that are well off the tourist map, known only to farmers who have tilled their shores and foothills for generations.

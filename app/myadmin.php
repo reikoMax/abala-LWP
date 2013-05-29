@@ -51,6 +51,8 @@
 				<div id="sent_messages_tab" class="tabContent">
 					<div id="confirmation_email">
 
+
+
 					</div><!--confirmation_email-->
 
 				</div><!--sent_messages-->
