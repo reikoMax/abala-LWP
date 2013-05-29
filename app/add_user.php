@@ -1,7 +1,5 @@
 <?php
 	
-	
-	
 	include "DAO/FunctionDAO.php";
 	
 	$firstname = $_POST['firstname'];
@@ -11,13 +9,14 @@
 	$email = $_POST['email'];
 	$username = $_POST['username'];
 	$password = $_POST['password'];
+	$retyped_password = $_POST['retype-password'];
 	
-	if($firstname!="" && $lastname!="" && $address!="" && $contact_info!="" && $email!="" && $username!="" && $password!="" ){ 
+	if($password==$retyped_password && $firstname!="" && $lastname!="" && $address!="" && $contact_info!="" && $email!="" && $username!="" && $password!="" ){ 
     $execute_add = new FunctionDAO();
 	$execute_add->add_user($firstname,$lastname,$address,$contact_info,$email,$username,$password);
 
 	}else{
-		alert("please insert all fields");
+		echo "null";
 	}
 
 	

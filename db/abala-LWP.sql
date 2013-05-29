@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: May 29, 2013 at 01:19 AM
+-- Generation Time: May 29, 2013 at 07:44 AM
 -- Server version: 5.5.8
 -- PHP Version: 5.3.5
 
@@ -70,6 +70,28 @@ INSERT INTO `fave_places` (`users_id`, `places_id`) VALUES
 (32, 75),
 (32, 76),
 (4, 77);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `fiesta_tbl`
+--
+
+CREATE TABLE IF NOT EXISTS `fiesta_tbl` (
+  `fiesta_id` int(12) NOT NULL AUTO_INCREMENT,
+  `fiesta_name` varchar(100) NOT NULL,
+  `fiesta_location` varchar(100) NOT NULL,
+  `fiesta_date` varchar(50) NOT NULL,
+  `fiesta_short_description` text NOT NULL,
+  PRIMARY KEY (`fiesta_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `fiesta_tbl`
+--
+
+INSERT INTO `fiesta_tbl` (`fiesta_id`, `fiesta_name`, `fiesta_location`, `fiesta_date`, `fiesta_short_description`) VALUES
+(1, 'Pintados-Kasadyaan Festival', 'Tacloban City', 'every last week of the month of june', 'a very popular Leyte festival  With Tacloban City as its focal point, this event aims to commemorate folk beliefs, epics, as well as the colorful traditions of the native people in the province.');
 
 -- --------------------------------------------------------
 
@@ -209,7 +231,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `user_password` varchar(50) DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
 
 --
 -- Dumping data for table `users`
@@ -224,7 +246,9 @@ INSERT INTO `users` (`user_id`, `user_name`, `user_lastname`, `user_address`, `u
 (21, 'de', 'de', 'de', 5677, 'sdsdf', 're', 're', '2013-05-08 16:26:32'),
 (22, 'Sakura', 'Kinomoyto', 'Tokyo,Japan', 2345, 'sakura_cute@yahoo.com', 'sakura', 'sakura', '2013-05-14 09:19:14'),
 (24, 'cherry', 'abala', 'g', 56756, 'aztigsiege_1596@yahoo.com', 'animne', 'admin', '2013-05-20 10:44:02'),
-(32, 'Mary Anne', 'Pore', 'Alangalang', 2147483647, 'mary_annepore@yahoo.com', 'anne', 'anne', '2013-05-20 16:15:20');
+(32, 'Mary Anne', 'Pore', 'Alangalang', 2147483647, 'mary_annepore@yahoo.com', 'anne', 'anne', '2013-05-20 16:15:20'),
+(33, 'Rinku', 'Niwa', 'Brgy.Dreanland,Makebileive Street', 2147483647, 'aztigsiege_1596@yahoo.com', 'rinkuNiwa', 'niwa', '2013-05-29 13:17:15'),
+(35, 'tg', 'rft', 'tyr', 0, 'ytr', 'ty', 'i', '2013-05-29 13:42:40');
 
 --
 -- Constraints for dumped tables

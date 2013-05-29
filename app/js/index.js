@@ -76,23 +76,7 @@
 		
 		});
 	});
-	   function hang_outs(){
-		 ajax({
-		
-						type:"POST",
-						url: "viewindex.php",
-						data:{data:JSON.stringify($("#add_places").serializeArray())},
-						data: function(){
-							$("#hang-outViewer").append(data);
-							alert(data);
-						
-						},
-						error: function(data){
-							alert('Opz');				
-						}
-
-					});
-		}
+	  
 		function view_festivals(){
 		 	$.ajax({
 		 		type:"POST",
@@ -118,8 +102,7 @@
 		 	 });
 		 });
 		/*-------------register_add------------------------------------*/
-		$("#submit_button").on('click',function(e){
-			alert("registration finished");
+		$("#submit_button").click(function(){
 			  var obj={"firstname":$("input[name='firstname']").val(),
 	                "lastname" :$("input[name='lastname']").val(),
 	                "address" :$("input[name='address']").val(),
@@ -133,9 +116,14 @@
 	              	url:'add_user.php',
 	              	data:obj,
 	              	sucess:function(data){
-	            		$("#registration_finished").show();
+	              		if(data=="null"){
+	              			alert("Warning: please check if your password match and complete all fields ");
+					      
+				}else{					
+					alert("Congratsulations!You have successfully register!");
+
+				}
 	              	},
-	              	
 	              	error:function(data){
 	              		alert(data);
 	              	}
