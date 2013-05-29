@@ -116,7 +116,7 @@
 	              	url:'add_user.php',
 	              	data:obj,
 	              	sucess:function(data){
-	              		if(data=="null"){
+	              		if(data=="nl"){
 	              			alert("Warning: please check if your password match and complete all fields ");
 					      
 				}else{					
