@@ -83,6 +83,18 @@
 			</table><br />
 	
 		</center>
+		<iframe width="450px" height="350"
+ frameborder="0" scrolling="no"
+ marginheight="0" marginwidth="0"
+ allowtransparency="true"
+ src="http://chatroll.com/embed/chat/icotp-ict-tambayan?id=Ds8347ZRhG1&platform=blogger&w=$0">
+ </iframe>
+ <br/>
+ <div style="font-size:0.9em;text-align:center;">
+ <a href="http://chatroll.com/">Blogger Chat</a></div>
+
+
+
 	</div><!--search-->
 
    		    
