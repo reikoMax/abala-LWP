@@ -198,7 +198,7 @@ Around the provincial capital of Tacloban, the usual arrival point, there are a 
 		</form>
 	</fieldset>
 </div><!--register_div-->
-<div id = "registration_finished" title = "CONFIRMATION"<span>>Congratulations! You're already registered </span>.
+<div id = "registration_finished" title = "CONFIRMATION"><span>>Congratulations! You're already registered </span>.
 </div><!--registration_finished-->
 <!--<div id="admin_div">
 	<form action="sign_in_admin">

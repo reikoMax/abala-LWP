@@ -25,7 +25,7 @@
 				
 			$this->closeCon();
 		}
-		function add_user($firstname,$lastname,$address,$contact_info,$email,$username,$password) {
+		function add_user($firstname,$lastname,$address,$contact_info,$email,$username,$password){
 				$this->openCon();
 				
 				$stmt = $this->con->prepare("INSERT INTO users (user_name,user_lastname,user_address,user_contact_info,user_email_address,user_username,user_password) VALUES (?,?,?,?,?,?,?)");
@@ -44,8 +44,7 @@
 			$this->openCon();
 			$stmt=$this->con->prepare("SELECT * from fiesta_tbl");
 			$stmt->execute();
-			$get_total_rows->fetch();
-			while($row = $stmt->fetch() ){
+			while($row = $stmt->fetch()){
 					echo "<tr id=".$row[0].">";
 					echo "<td>".$row[1]."</td>";
 					echo "<td>".$row[2]."</td>";

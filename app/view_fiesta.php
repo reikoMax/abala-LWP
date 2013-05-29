@@ -4,7 +4,7 @@
 	$action= new FunctionDAO();
 	
 	$action->view_fiesta();
-	$pages = ceil($get_total_rows[0]/$per_item);  
+	/*$pages = ceil($get_total_rows[0]/$per_item);  
 
 	$pagination = '';
 		if($pages > 1)
@@ -15,6 +15,6 @@
 		        $pagination .= '<li><a href="#" class="paginate_click" id="'.$i.'-page">'.$i.'</a></li>';
 		    }
 		    $pagination .= '</ul>';
-		}
+		}*/
 
 ?>
